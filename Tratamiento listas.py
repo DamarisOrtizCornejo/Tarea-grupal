@@ -15,6 +15,14 @@ class Lista:
         if enc ==True:return pos
         else:return -1
 
+    def listaFactorial(self,num):
+        import math
+        lista = []
+        for c in range(1,num):
+            facto = math.factorial(c)
+            self.lista.append(facto)
+        return lista
+
 #     def listaPrimo(n):
 #         lista_primos=[2]
 #         for i in range(3,n+1,2):
@@ -36,20 +44,20 @@ class Lista:
                 break
             self.lista=self.lista[0:pos]+auxlista+self.lista[pos:]
 
-    # def eliminarLista(self,valor):
-    #     result = []
-    #     for ele in lista:
-    #         if ele not in result:
-    #             result.append(ele)
-    #         else:
-    #             lista.remove(ele)
+    def eliminarLista(self,valor):
+        for ele in self.lista:
+            self.lista.remove(valor)
+            return
+
+    def retornaValorLista(self,posicion):
+        num=self.lista.pop(posicion)
+        return num
 
     def copiarTuplaLista(self,tupla):
-        listaT=list(tupla)
-        return listaT
+        pass
 
 lista = [2,4,6,8,6,5]
-List = Lista(lista)
+List = Lista()
 # List.presentarLista()
 # print(List.lista)
 #print(List.buscarLista(3))
@@ -62,7 +70,8 @@ List = Lista(lista)
 # lista.insert (1,6)
 # print(lista)
 # print(List.eliminarLista(lista))
+print(List.retornaValorLista(5))
 tupla=(1,2,3,4,5)
-#lista=list(tupla)
-print(List.copiarTuplaLista)
+lista=list(tupla)
+print(lista)
 
